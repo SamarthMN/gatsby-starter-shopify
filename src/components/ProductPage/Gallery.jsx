@@ -4,7 +4,7 @@ import { Flex, Box } from 'rebass';
 import styled from 'styled-components';
 
 const ThumbnailBox = styled(Box)(() => ({
-  transition: '0.5s ease all',
+  transition: '0.1s ease all',
   cursor: 'pointer'
 }));
 
@@ -28,8 +28,11 @@ const Gallery = ({ product }) => {
             {product.images.map((x, i) =>
               currentImage === product.images[i] ? (
                 <ThumbnailBox
-                  key={i}
-                  style={{ marginBottom: '10px', border: '3px solid black' }}
+                  key={i.toString()}
+                  style={{
+                    marginBottom: '7px',
+                    border: '2px solid black'
+                  }}
                   width={['400px', null, 'auto']}
                   ml={[0, null, 2]}
                   mr={[2, null, 0]}
@@ -41,8 +44,7 @@ const Gallery = ({ product }) => {
                     fadeIn={false}
                     loading="eager"
                     imgStyle={{
-                      WebkitFilter: 'blur(1px)',
-                      marginBorder: '10px solid black'
+                      marginBorder: '5px solid black'
                     }}
                   />
                 </ThumbnailBox>
@@ -50,7 +52,7 @@ const Gallery = ({ product }) => {
                 <ThumbnailBox
                   onMouseOver={e => setCurrentImage(product.images[i])}
                   style={{ marginBottom: '10px' }}
-                  key={i}
+                  key={i.toString()}
                   width={['400px', null, 'auto']}
                   ml={[0, null, 2]}
                   mr={[2, null, 0]}

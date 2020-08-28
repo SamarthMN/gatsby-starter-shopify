@@ -32,10 +32,16 @@ const Sort = ({ context }) => {
   return (
     <label
       htmlFor="sortBy"
-      className="has-text-weight-semibold is-uppercase"
-      style={{ margin: '-20px' }}
+      className="has-text-weight-semibold"
+      style={{
+        margin: '-20px',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end'
+      }}
     >
-      SORT BY :
+      <div style={{ paddingLeft: '0.5em', paddingRight: '0.5em' }}>Sort By</div>
       <div className="field">
         <div className="control">
           <div className="select">

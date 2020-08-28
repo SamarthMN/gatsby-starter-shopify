@@ -14,19 +14,19 @@ const ProductList = ({ data }) => {
         <div className="container">
           <div
             className="columns is-mobile"
-            style={{ marginBottom: '60px', margin: '0', padding: '10px' }}
+            style={{ marginBottom: '60px', margin: '0', padding: '20px' }}
           >
-            <div className="column is-2-desktop is-6-mobile">
+            <div className="column is-12-desktop is-12-mobile">
               <Sort context={context} />
             </div>
-            <div className="column is-2-desktop is-6-mobile">
-              <Collection context={context} products={products} />
-            </div>
           </div>
+          {/* <div className="column is-6-desktop is-12-mobile">
+              <Collection context={context} products={products} />
+            </div> */}
           <div className="columns is-multiline" style={{ margin: '0' }}>
             {products
-              .filter(p =>
-                context.store.filteredType === 'all'
+              .filter((p, i) =>
+                context.store.filteredType === 'all' && i < 10
                   ? p
                   : p.node.productType.includes(context.store.filteredType)
               )
@@ -46,12 +46,12 @@ const ProductList = ({ data }) => {
                   : null
               )
               .map((p, i) => {
-                let product = p;
+                const product = p;
                 return (
                   <div
                     className="column is-3"
                     style={{ marginBottom: '40px' }}
-                    key={i}
+                    key={i.toString()}
                   >
                     <ProductBox product={product} />
                   </div>

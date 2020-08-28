@@ -5,7 +5,7 @@ const ProductInfo = ({ product }) => {
     <>
       <p className="has-text-weight-semibold is-size-2">{product.title}</p>
       <p className="is-size-4 has-text-grey-dark">
-        ${product.variants[0].price}
+        ₹{product.variants[0].price}
       </p>
     </>
   );

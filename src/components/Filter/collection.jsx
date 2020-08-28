@@ -31,10 +31,18 @@ const Collection = ({ context, products }) => {
   return (
     <label
       htmlFor="filter"
-      className="has-text-weight-semibold is-uppercase"
-      style={{ margin: '-20px' }}
+      className="has-text-weight-semibold"
+      style={{
+        margin: '-20px',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end'
+      }}
     >
-      FILTER BY :
+      <div style={{ paddingLeft: '0.5em', paddingRight: '0.5em' }}>
+        Filter By
+      </div>
       <div className="field">
         <div className="control">
           <div className="select">

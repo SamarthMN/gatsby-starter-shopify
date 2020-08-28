@@ -52,7 +52,7 @@ const Addresses = () => {
           return (
             <div className="has-text-centered">
               <h2 className="title is-uppercase">Your Addresses</h2>
-              <Link to={'/account'}>
+              <Link to="/account">
                 <p
                   className="has-text-black"
                   style={{ textDecoration: 'underline' }}

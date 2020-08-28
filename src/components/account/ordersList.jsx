@@ -4,7 +4,7 @@ import Order from './order';
 const OrdersList = ({ orders }) => {
   const [selectedOrder, setSelectedOrder] = useState([]);
   const [onClickOrder, setOnClickOrder] = useState(false);
-
+  console.log(selectedOrder, onClickOrder);
   return (
     <>
       <div className="column has-text-centered is-9">
@@ -30,10 +30,10 @@ const OrdersList = ({ orders }) => {
                   <td>
                     <button
                       className="button is-dark"
-                      onClick={() =>
-                        setSelectedOrder(order.node) &&
-                        setOnClickOrder(!onClickOrder)
-                      }
+                      onClick={() => {
+                        setSelectedOrder(order.node);
+                        setOnClickOrder(!onClickOrder);
+                      }}
                     >
                       {order.node.name}
                     </button>

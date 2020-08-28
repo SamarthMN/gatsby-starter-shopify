@@ -20,7 +20,7 @@ const DefaultAddress = ({ defaultAddress, addressesSize }) => {
         </div>
       )}
       <br />
-      <Link to="account/addresses">
+      <Link to="/account/addresses">
         <button className="button is-dark">
           View Addresses ({addressesSize})
         </button>
